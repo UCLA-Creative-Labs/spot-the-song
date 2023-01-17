@@ -170,7 +170,7 @@ export class User extends DbItem implements IUser {
   public async addLobby(lobby: Lobby, writeToDatabase = true): Promise<boolean> {
     this.#lobbies.push({id: lobby.id, name: lobby.name, theme: lobby.theme});
     console.log("calling add lobby");
-    if (writeToDatabase) void this.writeToDatabase();
+    if (writeToDatabase) await this.writeToDatabase();
     const addedToPlaylist = await followPlaylist(this, lobby.id);
     return addedToPlaylist;
   }
@@ -180,7 +180,7 @@ export class User extends DbItem implements IUser {
    */
   public async removeLobby(lobby: Lobby, writeToDatabase = true): Promise<boolean> {
     this.#lobbies = this.#lobbies.filter(lobbyObj => lobbyObj.id !== lobby.id);
-    if (writeToDatabase) void this.writeToDatabase();
+    if (writeToDatabase) await this.writeToDatabase();
     const removedFromPlaylist = await unfollowPlaylist(this, lobby.id);
     return removedFromPlaylist;
   }

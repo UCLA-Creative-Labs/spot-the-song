@@ -37,7 +37,7 @@ lobby_router.post('/', async (req: Request, res: Response) => {
     return res.status(500).json('unable to create lobby at this time').end();
   }
 
-  const playlistCreated = lobby.synthesizePlaylist();
+  const playlistCreated = await lobby.synthesizePlaylist();
 
   !playlistCreated && logger.error(`Failed to synthesize playlist, ${lobbyName}.`);
 

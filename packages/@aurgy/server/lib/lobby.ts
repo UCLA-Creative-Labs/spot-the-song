@@ -174,7 +174,7 @@ export class Lobby extends DbItem implements ILobby {
     const added = await user.addLobby(this);
     if (!added) return false;
     void this.synthesizePlaylist();
-    writeToDb && void this.writeToDatabase();
+    writeToDb && await this.writeToDatabase();
     return added;
   }
 
@@ -187,7 +187,7 @@ export class Lobby extends DbItem implements ILobby {
     this.userMetadata = this.userMetadata.filter(userObj => userObj.id !== removeUserId);
     const removed = await user.removeLobby(this);
     if (!removed) return false;
-    writeToDb && void this.writeToDatabase();
+    writeToDb && await this.writeToDatabase();
     return removed;
   }
 
