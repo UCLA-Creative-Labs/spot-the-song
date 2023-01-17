@@ -1,68 +1,21 @@
-// import oracledb from 'oracledb';
-// const {Firestore} = require('@google-cloud/firestore');
 import {Firestore} from '@google-cloud/firestore';
-// import {logger} from '../utils';
 import { DbItem } from './db-item';
-
-// To make sure all writes are saved
-// oracledb.autoCommit = true;
+import { User } from './user';
 
 /**
  * A Client for managing database connections.
  */
 export class DbClient {
   /**
-   * The Oracle DB connection.
+   * The Firebase DB connection.
    *
    * @throws if the Client is not configured
    */
-  // get connection(): oracledb.Connection {
-  //   if (this._connection == null) {
-  //     throw new Error(
-  //       'DbClient is not connected to Oracle JSON Database. ' +
-  //       'Make sure you configure the client with DbClient.configure().',
-  //     );
-  //   }
-  //   return this._connection;
-  // }
-
-  // /**
-  //  * The soda database connection for Oracle DB.
-  //  *
-  //  * @throws if the Client is not configured
-  //  */
-  // get soda(): oracledb.SodaDatabase {
-  //   if (this._soda == null) {
-  //     throw new Error(
-  //       'SODA is not configured on DbClient. ' +
-  //       'Make sure you configure the client with DbClient.configure().',
-  //     );
-  //   }
-  //   return this._soda;
-  // }
 
   /**
    * Database collections where the key is the collection name.
    */
   public readonly collections: Record<string, any>;
-
-  /**
-   * The password for the oracle db connection.
-   */
-  // private readonly _password: string;
-  /**
-   * The connection string for the oracle db connection.
-   */
-  // private readonly _connectionString: string;
-
-  /**
-   * The private variable containing the connection.
-   */
-  // private _connection?: oracledb.Connection;
-  /**
-   * The private variable contianing the soda instance.
-   */
-  // private _soda?: oracledb.SodaDatabase;
   
   get firestore(): Firestore {
     if (this._firestore == null) {
@@ -79,30 +32,9 @@ export class DbClient {
   private _firestore?: Firestore;
 
   public constructor() {
-    // oracledb.initOracleClient({configDir: '/opt/oracle/instantclient' });
-    // this._password = process.env.PASSWORD ?? '';
-    // this._connectionString = process.env.CONNECTION_STRING ?? '';
     this._firestore = new Firestore();
     this.collections = {};
   }
-
-  /**
-   * Configures the db client. You must run this function once.
-   */
-  // public async configure(): Promise<void> {
-  //   if (this._connection != null && this._soda != null) return;
-  //   try {
-  //     this._connection = await oracledb.getConnection({
-  //       user: 'admin',
-  //       password: this._password,
-  //       connectionString: this._connectionString,
-  //     });
-  //     this._soda = await this._connection.getSodaDatabase();
-  //     logger.info('Oracle DB connection established!');
-  //   } catch (err) {
-  //     logger.error(err);
-  //   }
-  // }
 
   /**
    * Open a database collection given the collection name.
@@ -143,13 +75,7 @@ export class DbClient {
    */
   public async findDbItem(collectionName: string, id: string): Promise<any | null> {
     const collection = await this.openCollection(collectionName);
-    console.log("id passed to findDbItem is")
-    console.log(id);
     const item = await collection.doc(id).get();
-    // const item = await collection.find().filter({id}).getOne();
-    // console.log("inside findDbItem function");
-    // console.log(item);
-    // console.log("------------------");
     return item ?? null;
   }
 
@@ -161,10 +87,7 @@ export class DbClient {
    */
   public async getCollectionItems(collectionName: string): Promise<any[]> {
     const collection = await this.openCollection(collectionName);
-    const docs = await collection.get(); // or collection.listDocuments() or collection.select(field,!=, 92140i419241)
-    console.log("inside getCollectionItems function");
-    console.log(docs);
-    console.log("------------------");
+    const docs = await collection.get();
     return docs;
   }
 
@@ -181,30 +104,6 @@ export class DbClient {
       const collection = await this.openCollection(item.collectionName);
       void collection.doc(item.id).set(item.toJson());
     });
-
-    // const partitionedItems = items.reduce((acc: Record<string, PartitionedItems>, item) => {
-    //   if (!(item.collectionName in acc)) {
-    //     acc[item.collectionName] = { replace: [], insert: [] };
-    //   }
-    //   const partition = item.key ? 'replace' : 'insert';
-    //   acc[item.collectionName][partition].push(item);
-    //   return acc;
-    // }, {});
-    // console.log(partitionedItems);
-    // // ex. of the log { users: { replace: [], insert: [ [User] ] } }
-    // return;
-
-    // Object.entries(partitionedItems).forEach(async ([collectionName, partitions]) => {
-    //   const collection = await this.openCollection(collectionName);
-    //   if (partitions.insert.length > 0)
-    //     void collection.insertMany(partitions.insert.map(item => item.toJson()));
-    //   if (partitions.replace.length > 0) {
-    //     partitions.replace.forEach((item) => {
-    //       if (!item.key) return;
-    //       void collection.find().key(item.key).replaceOne(item.toJson());
-    //     });
-    //   }
-    // });
   }
 
   /**
@@ -214,7 +113,6 @@ export class DbClient {
    */
   public async deleteDbItem(item: DbItem): Promise<any> {
     const collection = await this.openCollection(item.collectionName);
-    // return collection.find().filter({id: item.id}).remove();
     return collection.doc(item.id).delete();
   }
 }
@@ -225,14 +123,5 @@ export async function getClient(): Promise<DbClient> {
   if (CLIENT != undefined) return CLIENT;
 
   CLIENT = new DbClient();
-  // try { await CLIENT.configure(); }
-  // catch (err) { logger.error(err); }
-
   return CLIENT;
 }
-
-// type PartitionedItems = {
-//   replace: DbItem[],
-//   insert: DbItem[],
-// }
-

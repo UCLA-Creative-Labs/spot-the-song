@@ -4,7 +4,7 @@
   "main": "dist/www/index.js",
   "description": "the server for the aurgy webapp",
   "scripts": {
-    "dev": "npx nodemon www/index.ts",
+    "dev": "npx nodemon www/index.ts -p 2000",
     "prebuild": "npx tsc --build --clean",
     "build": "npx tsc --build",
     "start": "node dist/www/index.js",
@@ -44,6 +44,7 @@
     "@google-cloud/firestore": "^5.0.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "firebase-admin": "^11.4.1",
     "jsonwebtoken": "^8.5.1",
     "node-fetch": "2.6.6",
     "oracledb": "https://github.com/oracle/node-oracledb/releases/download/v5.3.0/oracledb-src-5.3.0.tgz",
