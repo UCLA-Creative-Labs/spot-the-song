@@ -1,6 +1,5 @@
 import {Firestore} from '@google-cloud/firestore';
 import { DbItem } from './db-item';
-import { User } from './user';
 
 /**
  * A Client for managing database connections.
@@ -16,11 +15,11 @@ export class DbClient {
    * Database collections where the key is the collection name.
    */
   public readonly collections: Record<string, any>;
-  
+
   get firestore(): Firestore {
     if (this._firestore == null) {
       throw new Error(
-        'Firestore is not configured.'
+        'Firestore is not configured.',
       );
     }
     return this._firestore;
@@ -96,10 +95,7 @@ export class DbClient {
    *
    * @param items the items to insert into the database
    */
-  public async writeDbItems(...items: DbItem[]): Promise<void> {
-    console.log("inside writeDbItems");
-    console.log(items);
-    
+  public async writeDbItems(...items: DbItem[]): Promise<void> {    
     items.forEach(async item => {
       const collection = await this.openCollection(item.collectionName);
       void collection.doc(item.id).set(item.toJson());

@@ -109,8 +109,6 @@ export class Lobby extends DbItem implements ILobby {
    * @returns a newly created Lobby object
    */
   public static async create(props: LobbyCreateProps, key : string | null = null) : Promise<Lobby | null> {
-    console.log("inside Lobby create");
-    console.log(props);
     const manager = props.manager;
     const playlistId = await createSpotifyPlaylist(props.name);
     if (!playlistId) return null;
