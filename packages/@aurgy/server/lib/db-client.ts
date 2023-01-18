@@ -95,7 +95,7 @@ export class DbClient {
    *
    * @param items the items to insert into the database
    */
-  public async writeDbItems(...items: DbItem[]): Promise<void> {    
+  public async writeDbItems(...items: DbItem[]): Promise<void> {
     items.forEach(async item => {
       const collection = await this.openCollection(item.collectionName);
       void collection.doc(item.id).set(item.toJson());
