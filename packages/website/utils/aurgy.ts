@@ -1,7 +1,9 @@
 import {ILobbyBase, ILobbiesData, ILobbyData} from './lobby-data';
 import {IUserData} from './user-data';
 
-const URL = 'https://daddy.creativelabsucla.com';
+// const URL = 'https://daddy.creativelabsucla.com';
+const URL = 'http://localhost:2000';
+
 
 /**
  * USER SERVICES

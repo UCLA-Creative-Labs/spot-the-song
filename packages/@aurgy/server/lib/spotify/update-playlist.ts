@@ -11,9 +11,10 @@
 
 import fetch from 'node-fetch';
 import { User } from '..';
+import { ROOT_USER_ID } from '../private/CONSTANTS';
 
 export const updateSpotifyPlaylist = async (playlistId: string, playlistName: string): Promise<boolean | null> => {
-  const root = await User.fromId('0');
+  const root = await User.fromId(ROOT_USER_ID);
   if (!root) return false;
 
   const accessToken = await root.getAccessToken();

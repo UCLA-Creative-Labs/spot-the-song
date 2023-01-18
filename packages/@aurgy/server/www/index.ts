@@ -6,7 +6,7 @@ import {logger} from '../utils';
 import { lobby_router } from './lobby';
 import { me_router } from './me';
 
-const PORT = process.env.PORT ?? 3000;
+const PORT = process.env.PORT ?? 2000;
 
 const app = express();
 

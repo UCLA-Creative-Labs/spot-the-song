@@ -82,7 +82,8 @@ export class User extends DbItem implements IUser {
     const client = await getClient();
     const document = await client.findDbItem(COLLECTION.USERS, id);
     if (!document) return null;
-    const content = document.getContent();
+    const content = document.data();
+    if (!content) return null;
     return new User(id, content as DatabaseEntry, document.key ?? null);
   }
 
@@ -166,7 +167,7 @@ export class User extends DbItem implements IUser {
    */
   public async addLobby(lobby: Lobby, writeToDatabase = true): Promise<boolean> {
     this.#lobbies.push({id: lobby.id, name: lobby.name, theme: lobby.theme});
-    if (writeToDatabase) void this.writeToDatabase();
+    if (writeToDatabase) await this.writeToDatabase();
     const addedToPlaylist = await followPlaylist(this, lobby.id);
     return addedToPlaylist;
   }
@@ -176,7 +177,7 @@ export class User extends DbItem implements IUser {
    */
   public async removeLobby(lobby: Lobby, writeToDatabase = true): Promise<boolean> {
     this.#lobbies = this.#lobbies.filter(lobbyObj => lobbyObj.id !== lobby.id);
-    if (writeToDatabase) void this.writeToDatabase();
+    if (writeToDatabase) await this.writeToDatabase();
     const removedFromPlaylist = await unfollowPlaylist(this, lobby.id);
     return removedFromPlaylist;
   }
