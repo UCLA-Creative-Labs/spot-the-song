@@ -17,5 +17,5 @@ export default function Link({href, activeClassName, isDisabled, children}: Link
   const className = asPath === href && activeClassName != null ? activeClassName : '';
 
   const base = <a className={className}>{children}</a>;
-  return !isDisabled ? <NextLink href={href}>{base}</NextLink> : base;
+  return !isDisabled ? <NextLink href={href} legacyBehavior>{base}</NextLink> : base;
 }
