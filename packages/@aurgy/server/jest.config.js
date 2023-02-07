@@ -1,7 +1,5 @@
 module.exports = {
-  moduleNameMapper: {
-    "oracledb": "<rootDir>/.jest/mocks/oracledb.ts"
-  },
+  moduleNameMapper: {},
   preset: 'ts-jest',
   setupFiles: ["<rootDir>/.jest/setup/envVars.js"],
   testEnvironment: 'node',

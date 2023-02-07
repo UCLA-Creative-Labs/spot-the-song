@@ -2445,14 +2445,6 @@
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.1.tgz#d3357479a0fdfdd5907fe67e17e0a85c906e1301"
   integrity sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==
 
-"@types/oracledb@^5.2.1":
-  version "5.2.3"
-  resolved "https://registry.yarnpkg.com/@types/oracledb/-/oracledb-5.2.3.tgz#37acac26752a39c7aa94760e9e5db2780afadf3c"
-  integrity sha512-Mw1/LjO8WSCdVOIGopLwxoUi2pNb9NJ2NK06U/mpQhR738FNeVWXjNbla2LAZy3nTCqPHsg3phUQNqL3qhHj8w==
-  dependencies:
-    "@types/node" "*"
-    dotenv "^8.2.0"
-
 "@types/parse-json@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
@@ -3819,11 +3811,6 @@ dot-prop@^6.0.1:
   integrity sha512-tE7ztYzXHIeyvc7N+hR3oi7FIbf/NIjVP9hmAt3yMXzrQ072/fpjGLx2GxNxGxUl5V73MEqYzioOMoVhGMJ5cA==
   dependencies:
     is-obj "^2.0.0"
-
-dotenv@^8.2.0:
-  version "8.6.0"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.6.0.tgz#061af664d19f7f4d8fc6e4ff9b584ce237adcb8b"
-  integrity sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==
 
 dotenv@~10.0.0:
   version "10.0.0"
@@ -7255,10 +7242,6 @@ ora@^5.4.1:
     log-symbols "^4.1.0"
     strip-ansi "^6.0.0"
     wcwidth "^1.0.1"
-
-"oracledb@https://github.com/oracle/node-oracledb/releases/download/v5.3.0/oracledb-src-5.3.0.tgz":
-  version "5.3.0"
-  resolved "https://github.com/oracle/node-oracledb/releases/download/v5.3.0/oracledb-src-5.3.0.tgz#1bd2c83751fc5fc319497a35692c6f80821d5a27"
 
 os-homedir@^1.0.0:
   version "1.0.2"
