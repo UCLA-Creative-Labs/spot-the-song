@@ -9,8 +9,7 @@
     "build": "npx tsc --build",
     "start": "node dist/www/index.js",
     "lint": "npx eslint '**/*.ts'",
-    "lint:fix": "yarn run lint --fix",
-    "test": "npx jest"
+    "lint:fix": "yarn run lint --fix"
   },
   "repository": {
     "type": "git",
