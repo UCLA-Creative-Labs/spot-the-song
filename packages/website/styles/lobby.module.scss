@@ -1,5 +1,6 @@
 @use 'variables.module' as *;
 @use 'mixins.module' as mixin;
+@use "sass:map";
 
 // PLAYLIST VISUALIZATION + USERS BAR
 
@@ -10,16 +11,14 @@
 }
 
 .center-across {
-  @include mixin.centerElementsX;
+  @include mixin.center-elements-x;
 }
 
 $mobile-visual-height: 300px;
 $desktop-visual-height: 650px;
-
 $mobile-visual-width: 90vw;
 $desktop-visual-width: 75vw;
 $max-visual-width: 1200px;
-
 $visual-circle-size: 310px;
 
 #visual {
@@ -69,7 +68,7 @@ $visual-circle-size: 310px;
 
     .artist {
       margin-left: 10px;
-      color: map-get($colors, 'white-50');
+      color: map.get($colors, 'white-50');
     }
 
     .user-container {

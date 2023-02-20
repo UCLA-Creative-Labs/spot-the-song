@@ -102,7 +102,7 @@ lobby_id_router.delete('/:id', async (req: Request, res: Response) => {
   // remove lobby from each user's lobby list
   clientRes.users.forEach(async (userObj) => {
     const user = await User.fromId(userObj.id);
-    user?.removeLobby(lobby);
+    void user?.removeLobby(lobby);
   });
 
   void lobby.removeFromDatabase();

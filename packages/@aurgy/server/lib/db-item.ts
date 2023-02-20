@@ -1,4 +1,3 @@
-import oracledb from 'oracledb';
 import { getClient } from './db-client';
 import { COLLECTION } from './private/enums';
 
@@ -54,7 +53,7 @@ export abstract class DbItem implements IDbItem {
   /**
    * Remove this database item from the database
    */
-  public async removeFromDatabase(): Promise<oracledb.SodaRemoveResult> {
+  public async removeFromDatabase(): Promise<any> {
     const client = await getClient();
     return client.deleteDbItem(this);
   }
