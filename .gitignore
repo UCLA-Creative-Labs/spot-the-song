@@ -16,3 +16,4 @@ data/
 # Never commit environment variables
 .env
 credentials.json
+notes.txt
