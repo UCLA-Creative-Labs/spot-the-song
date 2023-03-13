@@ -1,9 +1,8 @@
 import fetch, {Response} from 'node-fetch';
-import { logger, objectToForm } from '../../utils';
+import { objectToForm } from '../../utils';
 import { HTTPResponseError } from '../../utils/errors';
 import { TOP_TRACKS } from '../private/SPOTIFY_ENDPOINTS';
 import { IArtist, Song } from '../song';
-import { getAudioFeatures } from './audio-features';
 import { SongResponse, TopSongResponse } from './types';
 
 function fetchTopSongs(accessToken: string, offset: number): Promise<Response> {
@@ -64,17 +63,6 @@ export async function getTopSongs(accessToken: string): Promise<Record<string, S
 
     return acc;
   }, Promise.resolve({}));
-
-  // reevaluate songs to update with audio features;
-  if (reevaluate.length > 0) {
-    logger.info(`Grabbing audio features for ${reevaluate.length} songs.`);
-    const audioFeaturesMap = await getAudioFeatures(accessToken, ...reevaluate);
-    Object.entries(audioFeaturesMap).forEach(([id, audioFeatures]) => {
-      const song = songMap[id];
-      song.updateAudioFeatures(audioFeatures);
-    });
-    logger.info('All new songs written to database.');
-  }
 
   return songMap;
 }
