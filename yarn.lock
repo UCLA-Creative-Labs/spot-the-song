@@ -3847,6 +3847,7 @@ dot-prop@^6.0.1:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 dotenv@^16.0.3:
   version "16.0.3"
@@ -3854,6 +3855,8 @@ dotenv@^16.0.3:
   integrity sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==
 
 >>>>>>> 37c508f66b3786125f548d95cbf2aab512edc697
+=======
+>>>>>>> fdab3e5 (Finished ticket)
 =======
 >>>>>>> fdab3e5 (Finished ticket)
 dotenv@~10.0.0:
