@@ -1,4 +1,5 @@
-@use 'variables.module' as *;
+@use "variables.module" as *;
+@use "sass:map";
 
 .modal {
   position: fixed;
@@ -8,7 +9,7 @@
   margin-top: calc((100vh - 200px) / 2);
   width: 350px;
   height: 200px;
-  background-color: map-get($colors, 'white');
+  background-color: map.get($colors, "white");
   background-color: transparent;
   display: none;
   flex-direction: column;
@@ -21,8 +22,8 @@
     outline: none;
     border: none;
     border-radius: 15px;
-    color: map-get($colors, 'white');
-    background-color: map-get($colors, 'white-25');
+    color: map.get($colors, "white");
+    background-color: map.get($colors, "white-25");
   }
 }
 
@@ -32,7 +33,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: map-get($colors, 'black-85');
+  background-color: map.get($colors, "black-85");
   display: none;
   z-index: 99;
 

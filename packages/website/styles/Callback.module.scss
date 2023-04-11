@@ -1,5 +1,5 @@
-@use 'mixins.module' as mixin;
+@use "mixins.module" as mixin;
 
 #callback-container {
-  @include mixin.centerElements;
+  @include mixin.center-elements;
 }
