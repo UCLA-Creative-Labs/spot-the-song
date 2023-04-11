@@ -23,6 +23,7 @@ export default function SpotifyCallback(): JSX.Element {
       document.cookie = `token=${data.jwt}`;
       setUserData(data);
       void router.push(getUrlPath() + '/me');
+      // document.cookie = `token=${data.jwt}`;
     };
     void redirect();
   }, [router]);

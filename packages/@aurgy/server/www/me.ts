@@ -6,6 +6,7 @@ import { User } from '../lib/user';
 import { logger } from '../utils';
 import { EXPIRATION, genJwt, validateUserJwt } from '../utils/jwt';
 
+// create router obj
 export const me_router = Router();
 
 me_router.post('/', async (req: Request, res: Response): Promise<void> => {
@@ -53,6 +54,7 @@ me_router.post('/', async (req: Request, res: Response): Promise<void> => {
   res.status(200).send({...user.getClientResponse(), jwt});
 });
 
+// middleware checks that jwt is authenticated
 me_router.get('/', validateUserJwt, async (req: Request, res: Response): Promise<void> => {
   const id: string = req.body.userId;
 
@@ -61,6 +63,7 @@ me_router.get('/', validateUserJwt, async (req: Request, res: Response): Promise
 
   // we should probably remove this at some point
   void user.updateTopSongs();
+  // send json object back to frontend
   res.status(200).send(user.getClientResponse());
 });
 
