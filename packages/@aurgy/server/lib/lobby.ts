@@ -84,8 +84,7 @@ export class Lobby extends DbItem implements ILobby {
     const client = await getClient();
     const docs = await client.getCollectionItems(COLLECTION.LOBBIES);
     return await Promise.all(docs.map(doc => {
-      const content = doc.getContent();
-      return new Lobby(content.id, content as DatabaseEntry, content.key);
+      return new Lobby(doc.id, doc as DatabaseEntry, doc.key);
     }));
   }
 

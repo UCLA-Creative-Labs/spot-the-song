@@ -1,3 +1,4 @@
+import { QueryDocumentSnapshot } from '@google-cloud/firestore';
 import {Firestore} from '@google-cloud/firestore';
 import { DbItem } from './db-item';
 
@@ -83,11 +84,16 @@ export class DbClient {
    *
    * @param collectionName the collection to query
    * @returns all the items in a collection
+   * the items are represent as json objects
    */
-  public async getCollectionItems(collectionName: string): Promise<any[]> {
+  public async getCollectionItems(collectionName: string): Promise<FirebaseFirestore.DocumentData[]> {
     const collection = await this.openCollection(collectionName);
     const docs = await collection.get();
-    return docs;
+    const data: FirebaseFirestore.DocumentData[] = [];
+    docs.forEach((doc: QueryDocumentSnapshot) => {
+      data.push(doc.data());
+    });
+    return data;
   }
 
   /**

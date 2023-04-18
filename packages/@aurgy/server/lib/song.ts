@@ -61,8 +61,7 @@ export class Song extends DbItem implements ISong {
     const client = await getClient();
     const docs = await client.getCollectionItems(COLLECTION.SONGS);
     return await Promise.all(docs.map(doc => {
-      const content = doc.getContent();
-      return new Song(content.id, content as DatabaseEntry, content.key);
+      return new Song(doc.id, doc as DatabaseEntry, doc.key);
     }));
   }
 
