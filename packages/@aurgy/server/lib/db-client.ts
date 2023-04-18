@@ -1,5 +1,4 @@
-import { QueryDocumentSnapshot } from '@google-cloud/firestore';
-import {Firestore} from '@google-cloud/firestore';
+import { Firestore, QueryDocumentSnapshot } from '@google-cloud/firestore';
 import { DbItem } from './db-item';
 
 /**
