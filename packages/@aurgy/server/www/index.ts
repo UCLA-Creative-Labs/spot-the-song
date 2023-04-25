@@ -2,6 +2,9 @@ import cors from 'cors';
 import express from 'express';
 import {logger} from '../utils';
 
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 // ROUTES
 import { lobby_router } from './lobby';
 import { me_router } from './me';

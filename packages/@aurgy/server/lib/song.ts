@@ -64,8 +64,7 @@ export class Song extends DbItem implements ISong {
     // map takes in function as param, call map on each element of array
     // promise says that we will await 
     return await Promise.all(docs.map(doc => {
-      const content = doc.getContent();
-      return new Song(content.id, content as DatabaseEntry, content.key);
+      return new Song(doc.id, doc as DatabaseEntry, doc.key);
     }));
   }
 

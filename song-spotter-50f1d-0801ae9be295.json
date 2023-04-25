@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "song-spotter-50f1d",
+  "private_key_id": "0801ae9be295ec383cec83fd6eb52d56009b4190",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCeE4XeUaljPXLb\nhufTInCFYAhUsFpSbvevlfi73D7Fmhno/lAwxqvTEdCKCInVRKw/QibqmRycsWmg\nfuiNU6kKzSXvYg19YgJIBI+7uC5z6OAPgE0fl250R9H3gAYcAGyPkMaqk54NWaSO\njaPilHZKoMX66FJ7ETFBm7Q+XDwqaZzl4BCKbwe/JB8r3HzyE5rf8Hn7y3JJMFoe\nhPOiWOm+6pgNLoYxzGwy5uD9BMwEvfuZhIRgYNM860OEx/MWDZ5OREjzH1ZYmc7d\nYzR6U75M8U7HY32s9r1Vhq4uDFXdhQ6rnwF7A3du/U6t3aIqUdYJR5PfvZ4+9eO/\nDofxj63BAgMBAAECggEABQr6RB268S4Cu9KG8QkLoT0aDVXcyrlemzJBz5nDl7B5\nk8xDSwwfwJ7neElwPuaiR0uufxQ/xgYPbOuqMqM1NdBnWXnfx6EUVfOx98OXCFHc\nJ8JxEUlFgpmce8WyyhAqMz5J/6vBPi3Jde/UBzWRIulHUCTUjEAh9WgPFYK9xBgH\n3JjtKeXdS0d3cyspgVDddu7NxAxubb3BUeD1tuUqoKdQDoKvrCHMETH9X8TT5nMu\ng4oXWSWotmgAmhOykI0zu5nBz2DUNf9lzX0Cd2ufzDecIhdoPRpIrjnHiK6WkHRP\nVloWLDkwcd0YZ4QLcSkOEH6i4CKYK9P2Mcl/L+Nh7QKBgQDQrGg1iT7Osd9IVrGS\nxElngARM6A0xOeBXfweSo/tBNHkpkZ5N2KC3qZQGhsRCKe+r3LGBn4VuzeY69XL7\nVIO0ixn8L8+Js6srHY8Zqly24TKG9KYZVWPD+H9Y21y9b9H65Wm0eKKuvvoNTLO6\nQQfhwTAG/s+TvEVPNw9W1PKXowKBgQDB7XB9M1i6ilKinBDhz3Y42jItl9hufYPc\nwkM34trSsSz6vJBvN8JahAbswqIT9IBNVLy3C4G9KFSOcqz+F7g6VLVx9A5whYDp\nmQlTLJqdBwExU2d8Icf+ri+hfh1PB5yv6JzCgqwpM1BWpqY7z14dIq1BW6btop2G\nZjDZvrXLSwKBgCbVLr9nvwxwBYFMwNbzOEXOiP5W4L2ca6dcuGgNpCBKR5H4y2Dp\nQ19qa2WbhsJZU4TEGTRqH0azgnjOXItw+uGKUVeg/ho+GUh4w7ye+4n89o4u0Qo9\n3ccGY4yBpgyK1qS+NKGlIYErgRUghQHQQEs+zFVA7hgsHSnUsUITduHJAoGBAJ6D\nd5xPGSq5H9yc1svM6WSFLdjIsnd2Dw+mlo0a2CS5//sfoKvYFvwnyQVD/nlzNGCB\ncBPqyuyUB7G8GJ1FRCghz4JKrHbbGUlX9yBOaD8MV7Q66W60qiYJuRM247wSi8fZ\nyjDP4Ot4byW06FIhKVuFWbr/sI2zizEtXKbPVQfLAoGBAM73EKSAGXU4lxMsGPzs\n1NiAzclAK2l5PZBQ1GPhtEkI7qQEIFeM3heAUGqbvbBOw5sV00zPXKC3OKUYasQj\n2aUqTucwh61WxfdHSYfiJ13IfhEjDs4FWYOXfggco5hN0ieSZBxPO094nuIob0mz\nbKn7bUG2v5/2OaI1VNkAehQs\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-jdqrx@song-spotter-50f1d.iam.gserviceaccount.com",
+  "client_id": "117578355389442297526",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-jdqrx%40song-spotter-50f1d.iam.gserviceaccount.com"
+}
