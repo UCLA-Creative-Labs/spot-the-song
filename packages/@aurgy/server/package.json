@@ -31,7 +31,6 @@
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
     "dotenv": "^16.0.3",
->>>>>>> 37c508f66b3786125f548d95cbf2aab512edc697
     "eslint": "^8.32.0",
     "eslint-plugin-import": "^2.22.1",
     "nodemon": "^2.0.15",
