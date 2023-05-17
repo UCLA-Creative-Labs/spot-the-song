@@ -25,6 +25,7 @@ export interface SongProps {
   readonly name: string;
   /**
    * The song's uniform resource identifier
+   * id
    */
   readonly uri: string;
   /**
@@ -60,6 +61,8 @@ export class Song extends DbItem implements ISong {
   public static async all(): Promise<Song[]> {
     const client = await getClient();
     const docs = await client.getCollectionItems(COLLECTION.SONGS);
+    // map takes in function as param, call map on each element of array
+    // promise says that we will await 
     return await Promise.all(docs.map(doc => {
       return new Song(doc.id, doc as DatabaseEntry, doc.key);
     }));

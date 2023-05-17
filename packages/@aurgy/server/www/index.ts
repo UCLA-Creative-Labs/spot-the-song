@@ -8,6 +8,7 @@ dotenv.config();
 // ROUTES
 import { lobby_router } from './lobby';
 import { me_router } from './me';
+import { song_router } from './song';
 
 const PORT = process.env.PORT ?? 2000;
 
@@ -28,5 +29,6 @@ app.get('/', async (_req, res) => {
 // LOGIN
 app.use('/lobby', lobby_router);
 app.use('/me', me_router);
+app.use('/song', song_router);
 
 app.listen(PORT, () => logger.info(`App listening on PORT ${PORT}`));
