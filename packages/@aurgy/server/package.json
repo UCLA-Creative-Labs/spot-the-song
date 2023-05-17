@@ -30,8 +30,6 @@
     "@types/node-fetch": "2.5.12",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
-<<<<<<< HEAD
-=======
     "dotenv": "^16.0.3",
 >>>>>>> 37c508f66b3786125f548d95cbf2aab512edc697
     "eslint": "^8.32.0",
