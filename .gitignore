@@ -16,3 +16,6 @@ data/
 # Never commit environment variables
 .env
 credentials.json
+
+# Never commit Firestore private key
+song-spotter*.json
